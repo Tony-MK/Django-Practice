@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<h1> Welcome </h1>
+
+
+	<div>
+		<h2> Institutions </h2>
+		<div> 
+			{% for institution in institutions %}
+				<strong> {{institution.name}}</strong>
+				<p><b> Location </b> {{institution.loaction }}</p>
+				<p><b> Email Address </b> {{institution.email }}</p>
+				<p><b> Rating</b> {{institution.rating }}</p>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div>
+		<h2> Book Appoinment </h2>
+		<form action="{% url 'Request Appointment' %}" method="POST">
+
+			{% csrf_token %}
+
+			<div class="form-group">
+				<label for="reason">Reason</label>
+				<input type="text" maxlength="200" name="reason">
+			</div>
+
+			<div class="form-group">
+				<label for="date">Date</label>
+				<input type="date" maxlength="200" name="date">
+			</div>
+
+			<div class="form-group">
+				<label for="institution">Instutions</label>
+				{% for institution in institutions %}
+				<select name="institution">
+					<option value="{{institution.id}}">{{institution.name}}</option>
+				</select>		
+				{% endfor %}
+			</div>
+
+			<button type="submit" class="btn-success"> Book </button>
+		</form>
+	</div>
+
+</body>
+</html>

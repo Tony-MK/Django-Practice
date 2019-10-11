@@ -1,0 +1,19 @@
+
+{% if appointment_request %}
+	<p><b> Reason </b> {{appointment_request.reason }}</p>
+	<p><b> Date Resevered </b> {{appointment_request.dateReserved }}</p>
+
+	<h2> Institution Details </h2>
+	<p><b> Name </b> {{appointment_request.institution.name }}</p>
+	<p><b> Location </b> {{appointment_request.institution.location }}</p>
+	<p><b> Rating</b> {{appointment_request.institution.rating }}</p>
+
+{% else %}
+
+	<p> No Appoiment is Booked  </p>
+{% endif %}
+
+
+
+
+
