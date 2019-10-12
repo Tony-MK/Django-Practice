@@ -3,6 +3,10 @@
 <head>
 	<title>Index</title>
 </head>
+<head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}">
+</head>
 <body>
 	<h1> Welcome </h1>
 
@@ -21,7 +25,7 @@
 
 	<div>
 		<h2> Book Appoinment </h2>
-		<form action="{% url 'Request Appointment' %}" method="POST">
+		<form action="{% url 'app:Request Appointment' %}" method="POST">
 
 			{% csrf_token %}
 

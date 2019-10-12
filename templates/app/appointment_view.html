@@ -1,12 +1,12 @@
 
-{% if appointment_request %}
-	<p><b> Reason </b> {{appointment_request.reason }}</p>
-	<p><b> Date Resevered </b> {{appointment_request.dateReserved }}</p>
+{% if appointmentrequest %}
+	<p><b> Reason </b> {{appointmentrequest.reason }}</p>
+	<p><b> Date Resevered </b> {{appointmentrequest.dateReserved }}</p>
 
 	<h2> Institution Details </h2>
-	<p><b> Name </b> {{appointment_request.institution.name }}</p>
-	<p><b> Location </b> {{appointment_request.institution.location }}</p>
-	<p><b> Rating</b> {{appointment_request.institution.rating }}</p>
+	<p><b> Name </b> {{appointmentrequest.institution.name }}</p>
+	<p><b> Location </b> {{appointmentrequest.institution.location }}</p>
+	<p><b> Rating</b> {{appointmentrequest.institution.rating }}</p>
 
 {% else %}
 

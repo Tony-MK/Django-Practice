@@ -11,7 +11,7 @@ class Institution(models.Model):
 	email = models.EmailField(max_length=254);
 
 	def __str__(self):
-		return '{} Located: {} Rating: {} Email: {}'.format(self.name,self.location,self.rating,self.email);
+		return '{} ,{}'.format(self.name,self.location);
 		
 
 class AppointmentRequest(models.Model):
@@ -21,4 +21,4 @@ class AppointmentRequest(models.Model):
 	institution = models.ForeignKey(Institution,on_delete=models.DO_NOTHING)
 
 	def __str__(self):
-		return 'Reason: {} Date: {} Institution: ({})'.format(self.reason,self.dateReserved,self.institution.name);
+		return '{},{}-{}'.format(self.reason,self.institution.name,self.dateReserved.strftime("%d %b %y"));
